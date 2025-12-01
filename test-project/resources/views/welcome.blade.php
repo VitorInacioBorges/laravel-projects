@@ -1,32 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ola</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/scripts.js"></script>
-</head>
-<body>
-    <h1> Site Vitor </h1>
+@extends("layouts.main")
 
-    @if($nome == "Vitor")
+@section("title", "UBS System")
+
+@section("content")
+
+<h1> Site Vitor </h1>
+
+@if($nome == "Vitor")
     <p> O nome é {{ $nome }} </p>
-    @else 
+@else 
     <p> Nao imprimo nomes que nao sejam Vitor </p>
-    @endif
+@endif
 
-    <a href="/contact"> Contatos </a>
+<a href="/contact"> Contatos </a> <br>
+<a href="/user"> Users </a>
+@for($i = 0; $i < count($array); $i++)
+    <p> {{ $array[$i] }} </p>
+@endfor
 
-    @for($i = 0; $i < count($array); $i++)
-        <p> {{ $array[$i] }} </p>
-    @endfor
+@php
+    $name = "Vitor";
+    echo $name;
+@endphp
 
-    @php
-        $name = "Vitor";
-        echo $name;
-    @endphp
+{{-- ISSO E UM COMENTARIO BLADE --}}
 
-    {{-- ISSO E UM COMENTARIO --}}
-</body>
-</html>
+@endsection

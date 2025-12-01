@@ -16,3 +16,14 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get("/user/{id?}", function ($id = null) {
+
+    $search = request("search");
+
+    return view("user", 
+    [
+        "search" => $search,
+        "id" => $id, 
+    ]);
+});
