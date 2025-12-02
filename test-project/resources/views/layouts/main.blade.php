@@ -15,7 +15,6 @@
         <script src="/js/scripts.js"></script>
     </head>
     <body>
-        @yield("content");
-        <footer> UBS_Sistema 1082039 &copy 2025 </footer>
+        @yield("content")
     </body>
 </html>

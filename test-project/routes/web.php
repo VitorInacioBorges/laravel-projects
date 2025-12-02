@@ -27,3 +27,13 @@ Route::get("/user/{id?}", function ($id = null) {
         "id" => $id, 
     ]);
 });
+
+Route::post('/user', function (Request $request) {
+
+    // Aqui você processa os dados vindos do formulário
+
+    $data = $request->all(); // só para teste
+
+    return dd($data); // mostra os dados para confirmar
+})->name('web');
+
